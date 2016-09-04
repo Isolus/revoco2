@@ -98,7 +98,7 @@ static int open_dev(char *path)
 	int i, fd;
 	struct hidraw_devinfo dinfo;
 
-	for (i = 0; i < 16; ++i)
+	for (i = 15; i >= 0; i--)
 	{
 		sprintf(buf, path, i);
 		fd = open(buf, O_RDWR);
